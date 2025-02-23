@@ -1,0 +1,25 @@
+
+
+.Loading {
+
+    position: absolute;
+    inset: 0;
+
+    &__wrapp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        position: relative;
+
+        &__text {
+            display: inline;
+
+            &__txt {
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+
+    }
+}
