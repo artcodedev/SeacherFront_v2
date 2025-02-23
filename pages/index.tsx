@@ -184,7 +184,7 @@ const Home: NextPage = () => {
     }
   }
 
-  const getItemStyle = (draggableStyle: any) => ({ ...draggableStyle });
+  const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({ ...draggableStyle });
 
   const handleScroll = () => {
     const position: number = window.pageYOffset;
@@ -243,7 +243,7 @@ const Home: NextPage = () => {
       <AppBarComponent />
 
       <Box sx={{ margin: '20px 20px' }}>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: {xs: 'block', md: 'flex' } }}>
           <TextField id="outlined-basic" label="Search id" variant="outlined" value={searchQuery} onChange={search_fetch} />
 
           <Box sx={{ marginLeft: '20px' }}>
@@ -294,17 +294,17 @@ const Home: NextPage = () => {
 
                                 <TableRow hover role="checkbox" sx={{ minWidth: '100%' }} tabIndex={-1} key={''} ref={provided.innerRef} {...provided.draggableProps}
                                   {...provided.dragHandleProps} style={getItemStyle(
-
+                                    snapshot.isDragging,
                                     provided.draggableProps.style
                                   )}>
 
-                                  <TableCell sx={{ textAlign: 'left', minWidth: '20%' }}>
+                                  <TableCell sx={{ textAlign: 'left', minWidth: '30%' }}>
                                     <Checkbox onClick={checkboxSelect(e.id.toString())} checked={selcted.includes(e.id.toString()) ? true : false} />
                                   </TableCell>
 
                                   <TableCell sx={{ textAlign: 'left', minWidth: '30%' }}>{e.id}</TableCell>
 
-                                  <TableCell sx={{ textAlign: 'left', minWidth: '50%' }}>{e.name}</TableCell>
+                                  <TableCell sx={{ textAlign: 'left', minWidth: '60%' }}>{e.name}</TableCell>
 
                                   <TableCell sx={{ textAlign: 'left', minWidth: '20%' }}>
                                     {e.age}
