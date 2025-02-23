@@ -184,7 +184,7 @@ const Home: NextPage = () => {
     }
   }
 
-  const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({ ...draggableStyle });
+  const getItemStyle = ( draggableStyle: any) => ({ ...draggableStyle });
 
   const handleScroll = () => {
     const position: number = window.pageYOffset;
@@ -294,7 +294,6 @@ const Home: NextPage = () => {
 
                                 <TableRow hover role="checkbox" sx={{ minWidth: '100%' }} tabIndex={-1} key={''} ref={provided.innerRef} {...provided.draggableProps}
                                   {...provided.dragHandleProps} style={getItemStyle(
-                                    snapshot.isDragging,
                                     provided.draggableProps.style
                                   )}>
 
